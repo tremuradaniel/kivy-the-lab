@@ -4,6 +4,25 @@ BoxLayoutExample:
     orientation: "vertical"
     Button:
         text: "A"
+        # size: "40dp", "40dp"
+        # size_hint: .8, .5 # percentages
+
+        # to override the size
+        
+        # size_hint: None, None
+        # size: "40dp", "40dp"
+
+        # width: "100dp"
+        # height: "60dp"
+
+        # size_hint: 1, None
+        # height: "60dp"
+
+        size_hint: .5, None
+        height: "60dp"
+        # x, center_x, right
+        # y, center_y, top
+        pos_hint: { "x": .5 }
     Button:
         text: "B"
     Button:
