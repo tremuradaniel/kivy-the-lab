@@ -1,7 +1,6 @@
 BoxLayoutExample:
 
 <BoxLayoutExample>:
-    orientation: "vertical"
     Button:
         text: "A"
         # size: "40dp", "40dp"
@@ -22,13 +21,24 @@ BoxLayoutExample:
         height: "60dp"
         # x, center_x, right
         # y, center_y, top
-        pos_hint: { "x": .5 }
-    Button:
-        text: "B"
-    Button:
-        text: "C"
+        pos_hint: { "center_y": .5 }
+
+
+    BoxLayout:
+        orientation: "vertical"
+        spacing: "3dp"            
+        Button:
+            text: "B1"
+        Button:
+            text: "B2"
+        Button:
+            text: "B3"
+        Button:
+            text: "B4"
+
     Label:
-        text: "Label"
+        text: "C"
+
 <MainWidget>:
     Button:
         text: "Hello"
