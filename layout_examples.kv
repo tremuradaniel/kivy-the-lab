@@ -1,0 +1,123 @@
+<PageLayoutExample@PageLayout>:
+    MainWidget:
+    BoxLayout:
+    GridLayoutExample
+
+<ScrollViewExample@ScrollView>:
+    StackLayoutExample:
+        size_hint: 1, None
+        height: self.minimum_height
+
+<StackLayoutExample>:
+    # left-right top-bottom
+    # orientation: "rl-tb"
+    # padding: ("20dp", "20dp", "20dp", "20dp")
+    # spacing: "20dp", "20dp"
+    Button:
+        text: "A"
+        size_hint: .2, .2
+    Button:
+        text: "B"
+        size_hint: .2, .2
+    Button:
+        text: "C"
+        size_hint: .2, .2
+    Button:
+        text: "D"
+        size_hint: .2, .2
+    Button:
+        text: "E"
+        size_hint: .2, .2
+    Button:
+        text: "F"
+        size_hint: .2, .2
+
+<GridLayoutExample@GridLayout>:
+    # rows
+    # cols
+    rows: 2
+    Button:
+        text: "A"
+        size_hint: .5, 1
+    Button:
+        text: "B"
+    Button:
+        text: "C"
+    Button:
+        text: "D"
+        size_hint: .5, 1
+    Button:
+        text: "E"
+    Button:
+        text: "F"
+    BoxLayoutExample:
+
+<AnchorLayoutExample>:
+    # right, left, center
+    anchor_x: "center"
+    # bottom, top, center
+    anchor_y: "top"
+    # Button:
+    #     text: "A"
+    #     size_hint: .1, .1
+    BoxLayout:
+        size_hint: .2, .2
+        Button:
+            text: "B1"
+        Button:
+            text: "B2"
+
+<BoxLayoutExample>:
+    Button:
+        text: "A"
+        # size: "40dp", "40dp"
+        # size_hint: .8, .5 # percentages
+
+        # to override the size
+        
+        # size_hint: None, None
+        # size: "40dp", "40dp"
+
+        # width: "100dp"
+        # height: "60dp"
+
+        # size_hint: 1, None
+        # height: "60dp"
+
+        size_hint: .5, None
+        height: "60dp"
+        # x, center_x, right
+        # y, center_y, top
+        pos_hint: { "center_y": .5 }
+
+
+    BoxLayout:
+        orientation: "vertical"
+        spacing: "3dp"            
+        Button:
+            text: "B1"
+        Button:
+            text: "B2"
+        Button:
+            text: "B3"
+        Button:
+            text: "B4"
+
+    Label:
+        text: "C"
+
+<MainWidget>:
+    Button:
+        text: "Hello"
+        size: "100dp", "80dp"
+        pos: "100dp", "200dp"
+    Button:
+        text: "Hello2"
+        size: "100dp", "80dp"
+        pos: "150dp", "300dp"
+        color: 0, 0, 1, 1
+    Label:
+        text: "Label"
+        size: "100dp", "80dp"
+        pos: "250dp", "300dp"
+        color: 1, 0, 0, 1
