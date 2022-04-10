@@ -12,9 +12,12 @@ NO_OF_BUTTONS = 100
 
 class WidgetsExample(GridLayout):
     counter = 0
+    counter_is_on = False
     my_text = StringProperty(str(counter))
     
     def on_button_click(self):
+        if (not(self.counter_is_on)):
+            return
         print("Button clicked")
         self.counter+= 1
         self.my_text = str(self.counter)
@@ -24,9 +27,11 @@ class WidgetsExample(GridLayout):
         print(widget.state)
         if widget.state == "normal":
             widget.text = "OFF"
+            self.counter_is_on = False
         else:
             # ON
             widget.text = "ON"
+            self.counter_is_on = True
 
 class StackLayoutExample(StackLayout):
     def __init__(self, **kwargs):
