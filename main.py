@@ -11,10 +11,13 @@ from kivy.properties import StringProperty
 NO_OF_BUTTONS = 100
 
 class WidgetsExample(GridLayout):
-    my_text = StringProperty("Hello")
+    counter = 0
+    my_text = StringProperty(str(counter))
+    
     def on_button_click(self):
         print("Button clicked")
-        self.my_text = "It worked!"
+        self.counter+= 1
+        self.my_text = str(self.counter)
 
 class StackLayoutExample(StackLayout):
     def __init__(self, **kwargs):
