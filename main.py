@@ -1,13 +1,21 @@
 from kivy.app import App
-from kivy.uix.widget import Widget
+from kivy.metrics import dp
+from kivy.uix.anchorlayout import AnchorLayout
 from kivy.uix.boxlayout import BoxLayout
 from kivy.uix.button import Button
-from kivy.uix.anchorlayout import AnchorLayout
 from kivy.uix.gridlayout import GridLayout
 from kivy.uix.stacklayout import StackLayout
-from kivy.metrics import dp
+from kivy.uix.widget import Widget
+from kivy.properties import StringProperty
 
 NO_OF_BUTTONS = 100
+
+class WidgetsExample(GridLayout):
+    my_text = StringProperty("Hello")
+    def on_button_click(self):
+        print("Button clicked")
+        self.my_text = "It worked!"
+
 class StackLayoutExample(StackLayout):
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
