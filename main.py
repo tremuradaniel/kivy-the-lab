@@ -7,12 +7,14 @@ from kivy.uix.gridlayout import GridLayout
 from kivy.uix.stacklayout import StackLayout
 from kivy.uix.widget import Widget
 from kivy.properties import StringProperty
+from kivy.properties import BooleanProperty
 
 NO_OF_BUTTONS = 100
 
 class WidgetsExample(GridLayout):
     counter = 0
     counter_is_on = False
+    counter_button_disabled = BooleanProperty(True)
     my_text = StringProperty(str(counter))
     
     def on_button_click(self):
@@ -28,10 +30,12 @@ class WidgetsExample(GridLayout):
         if widget.state == "normal":
             widget.text = "OFF"
             self.counter_is_on = False
+            self.counter_button_disabled = True
         else:
             # ON
             widget.text = "ON"
             self.counter_is_on = True
+            self.counter_button_disabled = False
 
 class StackLayoutExample(StackLayout):
     def __init__(self, **kwargs):
