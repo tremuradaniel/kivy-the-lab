@@ -18,6 +18,15 @@ class WidgetsExample(GridLayout):
         print("Button clicked")
         self.counter+= 1
         self.my_text = str(self.counter)
+        
+    def on_toogle_button_state(self, widget):
+        print("toogle state")
+        print(widget.state)
+        if widget.state == "normal":
+            widget.text = "OFF"
+        else:
+            # ON
+            widget.text = "ON"
 
 class StackLayoutExample(StackLayout):
     def __init__(self, **kwargs):
