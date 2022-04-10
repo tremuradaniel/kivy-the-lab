@@ -15,6 +15,7 @@ class WidgetsExample(GridLayout):
     counter = 0
     counter_is_on = False
     counter_button_disabled = BooleanProperty(True)
+    slider_value = StringProperty(str(50))
     my_text = StringProperty(str(counter))
     
     def on_button_click(self):
@@ -40,8 +41,10 @@ class WidgetsExample(GridLayout):
     def on_switch_active(self, widget):
         print("Switch: " + str(widget.active))
         
-    def on_slider_value(self, widget):
-        print("Slider: " + str(int(widget.value)))
+    def on_slider_value_change(self, widget):
+        value = int(widget.value)
+        self.slider_value = str(value)
+        print("Slider: " + str(value))
 
 class StackLayoutExample(StackLayout):
     def __init__(self, **kwargs):

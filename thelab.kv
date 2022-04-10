@@ -21,11 +21,15 @@ WidgetsExample:
         width: "100dp"
         on_active: root.on_switch_active(self)
     Slider:
+        id: my_slider
         min: 0
         max: 100
-        value: 50
+        value: root.slider_value
         # orientation
-        on_value: root.on_slider_value(self)
+        # on_value: root.on_slider_value_change(self)
+    Label:
+        text: str(int(my_slider.value))
+        # text: root.slider_value
 
 <PageLayoutExample@PageLayout>:
     MainWidget:
