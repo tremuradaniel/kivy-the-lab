@@ -36,6 +36,9 @@ class WidgetsExample(GridLayout):
             widget.text = "ON"
             self.counter_is_on = True
             self.counter_button_disabled = False
+            
+    def on_switch_active(self, widget):
+        print("Switch: " + str(widget.active))
 
 class StackLayoutExample(StackLayout):
     def __init__(self, **kwargs):

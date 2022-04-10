@@ -6,6 +6,7 @@ WidgetsExample:
         text: "OFF"
         on_state: root.on_toogle_button_state(self)
         size_hint: None, 1
+        width: "100dp"
     Button:
         text: "Click here"
         on_press: root.on_button_click()
@@ -15,6 +16,10 @@ WidgetsExample:
         font_name: "fonts/Lcd.ttf"
         font_size: "80dp"
         color: 1, .5, 1, 1
+    Switch:
+        size_hint: None, 1
+        width: "100dp"
+        on_active: root.on_switch_active(self)
 
 <PageLayoutExample@PageLayout>:
     MainWidget:
