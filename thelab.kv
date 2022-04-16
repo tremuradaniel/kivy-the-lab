@@ -3,30 +3,29 @@
 #:import navigation_screen_manager navigation_screen_manager
 #:import boxlayout_with_action_bar boxlayout_with_action_bar
 
-MyScreenManager:
+<MainMenu@BoxLayout>:
+  Button:
+    text: "Images"
+    on_press: app.manager.push("ImagesExample")
+  Button:
+    text: "Widgets"
+    on_press: app.manager.push("Widgets")
+  Button:
+    text: "Layouts"
+    on_press: app.manager.push("Layout")  
 
-<MyScreenManager>:
+<ScreenManager>:
   Screen:
-    name: "screen1"
-    BoxLayout:
-      Button:
-        text: "go to screen images"
-        on_press: app.manager.push("ImagesExample")
-      Button:
-        text: "go to screen 3"
-        on_press: app.manager.push("screen3")
+    MainMenu:
   Screen:
     name: "ImagesExample"
     BoxLayoutWithActionBar:
-      # title: "Images"
       ImagesExample:
   Screen:
-    name: "screen2"
-    Button:
-      text: "Button2"
-      on_press: app.manager.pop()
+    name: "Widgets"
+    BoxLayoutWithActionBar:
+      WidgetsExample:
   Screen:
-    name: "screen3"
-    Button:
-      text: "Button3"
-      on_press: app.manager.pop()
+    name: "Layout"
+    BoxLayoutWithActionBar:
+      PageLayoutExample:
