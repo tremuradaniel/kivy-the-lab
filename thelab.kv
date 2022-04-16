@@ -1,4 +1,21 @@
 #:import layout_examples layout_examples
 #:import widget_examples widget_examples
 
-ImagesExample:
+MyScreenManager:
+
+<MyScreenManager@ScreenManager>:
+  Screen:
+    name: "screen1"
+    Button:
+      text: "Button1"
+      on_press: root.transition.direction = "left"; root.current = "screen2"
+  Screen:
+    name: "screen2"
+    Button:
+      text: "Button2"
+      on_press: root.transition.direction = "left"; root.current = "screen3"
+  Screen:
+    name: "screen3"
+    Button:
+      text: "Button3"
+      on_press: root.transition.direction = "right"; root.current = root.previous()
